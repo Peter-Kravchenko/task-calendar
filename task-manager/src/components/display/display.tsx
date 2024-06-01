@@ -1,4 +1,4 @@
-function Display() {
+function Display(): JSX.Element {
   return <div>Display</div>;
 }
 

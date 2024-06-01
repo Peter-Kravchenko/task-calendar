@@ -1,6 +1,16 @@
 import './calendar-grid.css';
 
-function CalendarGrid({ today, startDate, totalDays }) {
+type calendarGridProps = {
+  today: moment.Moment;
+  startDate: moment.Moment;
+  totalDays: number;
+};
+
+function CalendarGrid({
+  today,
+  startDate,
+  totalDays,
+}: calendarGridProps): JSX.Element {
   const day = startDate.clone();
   const daysMap = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
 

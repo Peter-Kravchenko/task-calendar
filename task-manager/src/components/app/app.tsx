@@ -1,6 +1,6 @@
 import CalendarPage from '../../pages/calendar-page/calendar-page';
 
-function App() {
+function App(): JSX.Element {
   return (
     <>
       <CalendarPage />
