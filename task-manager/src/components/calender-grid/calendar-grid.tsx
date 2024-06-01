@@ -7,7 +7,9 @@ function CalendarGrid() {
   return (
     <div className="grid-wrapper">
       {daysArray.map((day) => (
-        <div key={day}>{day}</div>
+        <div className="cell-wrapper weekday" key={day}>
+          {day}
+        </div>
       ))}
     </div>
   );

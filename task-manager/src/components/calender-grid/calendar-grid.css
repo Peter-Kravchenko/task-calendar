@@ -2,14 +2,23 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 20px 20px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    '. . . . . . .'
-    '. . . . . . .'
-    '. . . . . . .'
-    '. . . . . . .'
-    '. . . . . . .'
-    '. . . . . . .'
-    '. . . . . . .';
+  gap: 2px;
+  background-color: rgb(98, 98, 98);
+}
+
+.cell-wrapper {
+  display: flex;
+  justify-content: right;
+  min-width: 140px;
+  min-height: 80px;
+  cursor: pointer;
+}
+
+.cell-wrapper.weekday {
+  background-color: rgb(55, 54, 54);
+  color: rgb(208, 208, 208);
+}
+.cell-wrapper.weekend {
+  background-color: rgb(105, 105, 105);
+  color: rgb(208, 208, 208);
 }
