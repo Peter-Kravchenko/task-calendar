@@ -1,20 +1,28 @@
 import './monitor.css';
 
 type monitorProps = {
-  today: moment.Moment;
+  pivotDay: moment.Moment;
+  prevClickHandler: () => void;
+  todayClickHandler: () => void;
+  nextClickHandler: () => void;
 };
 
-function Monitor({ today }: monitorProps): JSX.Element {
+function Monitor({
+  pivotDay,
+  prevClickHandler,
+  todayClickHandler,
+  nextClickHandler,
+}: monitorProps): JSX.Element {
   return (
     <div className="monitor">
       <div className="date">
-        <span className="date month">{today.format('MMMM')}</span>
-        <span className="date year">{today.format('YYYY')}</span>
+        <span className="date month">{pivotDay.format('MMMM')}</span>
+        <span className="date year">{pivotDay.format('YYYY')}</span>
       </div>
       <div className="btn-monitor">
-        <button>&lt;</button>
-        <button>Today</button>
-        <button>&gt;</button>
+        <button onClick={prevClickHandler}>&lt;</button>
+        <button onClick={todayClickHandler}>Today</button>
+        <button onClick={nextClickHandler}>&gt;</button>
       </div>
     </div>
   );
