@@ -16,7 +16,6 @@ function CalendarPage() {
   const todayClickHandler = () => {
     setPivotDay(moment());
   };
-
   const nextClickHandler = () => {
     setPivotDay((prev) => prev.clone().add(1, 'month'));
   };

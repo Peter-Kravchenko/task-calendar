@@ -1,9 +1,27 @@
+.grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  color: #dcdddd;
+  background-color: #1e1f21;
+  border-bottom: 1px solid #4d4d4d;
+}
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 2px;
-  background-color: rgb(61, 63, 65);
+  grid-gap: 1px;
+  background-color: #4d4d4d;
+}
+
+.cell-header {
+  display: flex;
+  justify-content: right;
+  background-color: #1e1f21;
+  color: #dcdddd;
+  min-width: 140px;
+  min-height: 20px;
 }
 
 .cell-wrapper {
@@ -20,7 +38,7 @@
 }
 .cell-wrapper.weekend {
   background-color: #1e1f21ba;
-  color: #dcdddd;
+  color: #dcddddc8;
 }
 
 .cell-wrapper.today {
