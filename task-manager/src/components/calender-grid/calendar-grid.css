@@ -3,7 +3,7 @@
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 2px;
-  background-color: rgb(98, 98, 98);
+  background-color: rgb(61, 63, 65);
 }
 
 .cell-wrapper {
@@ -15,16 +15,16 @@
 }
 
 .cell-wrapper.weekday {
-  background-color: rgb(55, 54, 54);
-  color: rgb(208, 208, 208);
+  background-color: #1e1f21;
+  color: #dcdddd;
 }
 .cell-wrapper.weekend {
-  background-color: rgb(105, 105, 105);
-  color: rgb(208, 208, 208);
+  background-color: #1e1f21ba;
+  color: #dcdddd;
 }
 
 .cell-wrapper.today {
-  background-color: rgb(148, 28, 28);
+  background-color: rgba(214, 64, 64, 0.57);
   color: rgb(208, 208, 208);
   font-weight: bold;
 }

@@ -1,0 +1,24 @@
+.monitor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1e1f21;
+  color: #dcdddd;
+  padding: 16px;
+}
+
+.date {
+  font-size: 32px;
+}
+
+.date.month {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.btn-monitor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

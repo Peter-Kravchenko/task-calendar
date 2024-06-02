@@ -1,7 +1,7 @@
 import moment from 'moment';
 import CalendarGrid from '../../components/calender-grid/calendar-grid';
-import Display from '../../components/display/display';
-import Header from '../../components/header/header';
+import Monitor from '../../components/monitor/monitor';
+import Title from '../../components/title/title';
 
 function CalendarPage() {
   const today = moment();
@@ -10,8 +10,8 @@ function CalendarPage() {
 
   return (
     <div>
-      <Header />
-      <Display />
+      <Title />
+      <Monitor today={today} />
       <CalendarGrid today={today} startDate={startDate} totalDays={totalDays} />
     </div>
   );

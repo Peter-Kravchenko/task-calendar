@@ -1,0 +1,9 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  background-color: #2a2b2d;
+  color: #dcdddd;
+  font-size: 32px;
+}
