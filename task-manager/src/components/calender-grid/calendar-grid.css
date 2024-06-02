@@ -46,10 +46,29 @@
   border: 1px solid rgb(214, 64, 64);
 }
 
+.cell-wrapper.not-selected-month {
+  color: #777777c8;
+}
+
+.row-in-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-day-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .day-wrapper {
   display: flex;
   justify-content: center;
   width: 33px;
   height: 33px;
   align-items: center;
+}
+
+.event-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -6,6 +6,7 @@ type calendarGridProps = {
   pivotDay: moment.Moment;
   startDate: moment.Moment;
   totalDays: number;
+  openModal: () => void;
 };
 
 function CalendarGrid({
@@ -13,6 +14,7 @@ function CalendarGrid({
   pivotDay,
   startDate,
   totalDays,
+  openModal,
 }: calendarGridProps): JSX.Element {
   const day = startDate.clone();
   const daysMap = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
@@ -31,16 +33,29 @@ function CalendarGrid({
         {daysMap.map((day, index) => {
           const date = day.date();
           const isToday = day.isSame(today, 'day');
+          const isSelectedMonth = day.isSame(pivotDay, 'month');
           const isWeekend = day.day() === 0 || day.day() === 6;
 
           return (
             <div
+              onClick={() => {
+                openModal();
+                console.log(`open modal ${day}`);
+              }}
               key={index}
               className={`cell-wrapper ${isToday ? 'today' : ''} ${
                 isWeekend ? 'weekend' : 'weekday'
-              }`}
+              } ${isSelectedMonth ? '' : 'not-selected-month'}`}
             >
-              <div className="day-wrapper">{date}</div>
+              <div className="row-in-cell">
+                <div className="show-day-wrapper">
+                  <div className="day-wrapper">{date}</div>
+                </div>
+                <div>
+                  <div className="event-wrapper"></div>
+                  {/* Здесь будут события */}
+                </div>
+              </div>
             </div>
           );
         })}

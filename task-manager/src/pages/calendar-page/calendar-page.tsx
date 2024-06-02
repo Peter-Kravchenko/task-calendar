@@ -3,12 +3,23 @@ import moment from 'moment';
 import CalendarGrid from '../../components/calender-grid/calendar-grid';
 import Monitor from '../../components/monitor/monitor';
 import Title from '../../components/title/title';
+import Modal from '../../components/modal/modal';
+
+const DAYS_IN_CALENDAR_PAGE = 42;
 
 function CalendarPage() {
   const today = moment();
+  const totalDays = DAYS_IN_CALENDAR_PAGE;
   const [pivotDay, setPivotDay] = useState(moment());
   const startDate = pivotDay.clone().startOf('month').startOf('week');
-  const totalDays = 42;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const prevClickHandler = () => {
     setPivotDay((prev) => prev.clone().subtract(1, 'month'));
@@ -21,7 +32,8 @@ function CalendarPage() {
   };
 
   return (
-    <div>
+    <main>
+      {isModalOpen && <Modal closeModal={closeModal} />}
       <Title />
       <Monitor
         pivotDay={pivotDay}
@@ -34,8 +46,9 @@ function CalendarPage() {
         pivotDay={pivotDay}
         startDate={startDate}
         totalDays={totalDays}
+        openModal={openModal}
       />
-    </div>
+    </main>
   );
 }
 
